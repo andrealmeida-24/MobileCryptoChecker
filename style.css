@@ -35,7 +35,7 @@ nav {
   font-size: 1.4em;
   text-transform: uppercase;
   text-align: center;
-  margin: 20px auto;
+  margin: 10px auto;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -85,7 +85,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 25px 50px auto 50px;
+  margin: 25px 50px 25px 50px;
   color: white;
 
   background: rgba(255, 255, 255, 0.1);
