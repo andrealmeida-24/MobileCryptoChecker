@@ -18,6 +18,8 @@ const errorDisplay = document.querySelector(".modal--txt");
 const txtErrorDisplay = document.querySelector(".modal--txt-2");
 const errorBtn = document.querySelector(".lower--modal--btn");
 
+const lastupdateTxt = document.querySelector(".footer--update-info");
+
 const calculatorInput = document.querySelector(".amount");
 
 const modalLandscapeWindow = document.querySelector(
@@ -66,7 +68,11 @@ window.addEventListener("load", function () {
         if (data.status === 503)
           throw new Error("Sorry! Our server is down ☹️, try again later!");
 
+        if (coinUserTxt === "")
+          throw new Error("Please insert a valid coin name!");
+
         const dataCoin = await data.json();
+
         const dataCoinAbv = dataCoin.symbol;
 
         // fetch coin prices data
@@ -126,6 +132,15 @@ window.addEventListener("load", function () {
         coinCirculationTxt.textContent = `${dataCoinAbv} Price Calculator`;
         coinCirculation.textContent = `${dataCoinAbv} ${coinPriceUSD}`;
 
+        const dateLastUpdate = new Date(dataCoin.last_updated);
+        const dateFormat = String(dataCoin.last_updated).slice(0, 10);
+        console.log(dateFormat);
+        console.log(dateLastUpdate);
+
+        lastupdateTxt.textContent = `Last update: ${dateFormat} at ${String(
+          dateLastUpdate
+        ).slice(15, 31)}`;
+
         //clear input text
         coinInput.value = "";
 
@@ -150,7 +165,6 @@ window.addEventListener("load", function () {
           ).format(multiply)}`;
         });
       } catch (err) {
-        console.log(err);
         //clear input text
         coinInput.value = "";
 
@@ -170,6 +184,8 @@ window.addEventListener("load", function () {
           modalWindow.classList.remove("visible");
           modalWindow.classList.add("hidden");
         });
+
+        console.clear();
       }
     };
 
