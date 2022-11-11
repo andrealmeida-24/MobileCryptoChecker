@@ -1,0 +1,318 @@
+:root {
+  --background: #121212;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--background);
+  color: white;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  background: url(3_body_background.webp) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* navbar */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.nav--txt {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px auto;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* hero */
+.hero--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 10px 30px auto 30px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.hero--input {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.8em;
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+.hero--btn {
+  font-size: 0.8em;
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: orange;
+}
+
+/* coin section */
+.coin--section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 50px auto 50px;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.coin-img-txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-bottom: 25px;
+}
+
+.coin--txt-base {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 20px;
+}
+
+.coin--card {
+  font-size: 0.9em;
+  margin-top: 30px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.coin--name {
+  font-weight: 300;
+  font-size: 1.85em;
+}
+
+.coin--abv {
+  font-weight: 300;
+  margin-top: 3px;
+  font-size: 1em;
+}
+
+.coin--value-lines {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.coin--value,
+.coin--market,
+.coin--volume,
+.coin--circulation {
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+.coin--value-infl {
+  font-weight: 400;
+  margin-left: 10px;
+  font-size: 1em;
+  align-self: flex-start;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.coin--market-lines,
+.coin--volume-lines,
+.coin--circulation-lines {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.coin--market-txt,
+.coin--volume-txt,
+.coin--circulation-txt {
+  font-weight: 300;
+  font-size: 1em;
+  color: orange;
+  margin-top: 3px;
+}
+
+.input_price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.amount {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: white;
+  color: var(--background);
+  text-align: left;
+  padding-left: 10px;
+  margin-right: auto;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+/* modal window (errors) */
+.modal--window {
+  display: flex; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal--content {
+  background-color: #e03c23;
+  opacity: 1;
+  margin: auto; /* 15% from the top and centered */
+  padding: 0px;
+  border-radius: 10px;
+  width: 90%; /* Could be more or less, depending on screen size */
+}
+
+.upper--modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.fa-triangle-exclamation {
+  font-size: 3em;
+  margin-top: 10px;
+}
+
+.modal--txt {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.lower--modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  background-color: white;
+  color: var(--background);
+  padding: 20px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.modal--txt-2 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: gray;
+}
+
+.lower--modal--btn {
+  margin-top: 40px;
+  text-transform: uppercase;
+  padding: 12px 25px;
+  border-radius: 50px;
+  background-color: #e03c23;
+  color: white;
+  border: none;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* transition effects */
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+/* landscape orientation */
+.modal--landscape--window {
+  display: flex;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal--landscape--content {
+  background-color: #e03c23;
+  opacity: 1;
+  margin: auto; /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%; /* Could be more or less, depending on screen size */
+}
+
+.upper--landscape--modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.fa-rotate {
+  font-size: 3em;
+  margin-top: 10px;
+}
+
+.modal--landscape--txt {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
